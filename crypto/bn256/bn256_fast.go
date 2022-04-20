@@ -20,7 +20,11 @@ type G1 = bn256cf.G1
 // output of an operation, but cannot be used as an input.
 type G2 = bn256cf.G2
 
+type GT = bn256.GT
 // PairingCheck calculates the Optimal Ate pairing for a set of points.
 func PairingCheck(a []*G1, b []*G2) bool {
 	return bn256cf.PairingCheck(a, b)
+}
+func Pair(g1 *G1, g2 *G2) *GT{
+	return bn256cf.Pair(g1, g2)
 }
